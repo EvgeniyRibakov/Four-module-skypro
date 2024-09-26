@@ -1,9 +1,30 @@
 class Product:
+    __price = float
+
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
+
+    @property
+    def price(self) -> float:
+        """Геттер атрибута price"""
+        return self.__price
+
+    @price.setter
+    def price(self, price: int) -> None:
+        """Сеттер атрибута price"""
+        if price <= 0:
+            print("Цена не должна быть нулевая или отрицательная")
+        else:
+            self.__price = price
+
+    @classmethod
+    def new_product(cls, params: dict) -> "Product":
+        """Создаёт новый объект класса Product"""
+        new_prod = cls(params["name"], params["description"], params["price"], params["quantity"])
+        return new_prod
 
 
 class Category:
@@ -13,9 +34,25 @@ class Category:
     def __init__(self, name: str, description: str, products: list):
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
         Category.category_count += 1
         Category.product_count += len(products)
+
+    def add_product(self, product: Product) -> None:
+        """Добавляет новый объект в список атрибута __products"""
+        self.__products.append(product)
+        self.product_count += 1
+
+    def __str__(self) -> str:
+        return f"{self.name}, количество продуктов: {self.product_count} шт."
+
+    @property
+    def products(self) -> list:
+        """Публичная версия атрибута __products, выдающая список строк"""
+        product_list = []
+        for product in self.__products:
+            product_list.append(str(product))
+        return product_list
 
 
 if __name__ == "__main__":
@@ -57,6 +94,6 @@ if __name__ == "__main__":
     print(category2.name)
     print(category2.description)
     print(len(category2.products))
-    print([product.name for product in category2.products])
+    print(category2.products)
     print(Category.category_count)
     print(Category.product_count)

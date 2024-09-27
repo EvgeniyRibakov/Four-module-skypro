@@ -7,6 +7,12 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self) -> str:
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other: "Product") -> float:
+        return self.price * self.quantity + other.price * other.quantity
+
     @property
     def price(self) -> float:
         """Геттер атрибута price"""
@@ -28,6 +34,7 @@ class Product:
 
 
 class Category:
+    __products: list
     category_count = 0
     product_count = 0
 

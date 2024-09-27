@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48f17dd2-d6b8-4776-8b7c-1eed9cf83702" name="Changes" comment="log 2">
+    <list default="true" id="48f17dd2-d6b8-4776-8b7c-1eed9cf83702" name="Changes" comment="first attempt 14.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
       <recent name="C:\Users\Acer\PycharmProjects\Fourteen module skypro\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Unnamed">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Fourteen module skypro" />
       <option name="ENV_FILES" value="" />
@@ -149,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727103346803</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first attempt 14.2">
+      <option name="closed" value="true" />
+      <created>1727373815927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727373815927</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,7 +173,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="log 1" />
     <MESSAGE value="log 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="log 2" />
+    <MESSAGE value="first attempt 14.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="first attempt 14.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

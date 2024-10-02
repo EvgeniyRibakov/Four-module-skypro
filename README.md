@@ -7,3 +7,9 @@
 Код находится в файле main.py
 
 
+Классы
+
+    Product - Продукты
+        Smartphone - Смартфоны
+        LawnGrass - Трава газонная
+    Category - Категории

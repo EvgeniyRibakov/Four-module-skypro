@@ -1,4 +1,5 @@
 import pytest
+
 from src.main import Category, Product
 
 
@@ -88,12 +89,9 @@ def test_add_product(category_1):
 
 
 def test_new_product():
-    prod2 = Product.new_product({
-        "name": "name1",
-        "description": "-",
-        "price": 43892.39,
-        "quantity": 432
-    })
+    prod2 = Product.new_product(
+        {"name": "name1", "description": "-", "price": 43892.39, "quantity": 432}
+    )
     assert isinstance(prod2, Product)
     assert prod2.name == "name1"
     assert prod2.price == 43892.39
@@ -110,9 +108,6 @@ def test_price_setter(product_1):
 
 
 def test_product_addition(product_1):
-    prod2 = Product.new_product({
-        "name": "name1",
-        "description": "-",
-        "price": 150.0,
-        "quantity": 2
-    })
+    prod2 = Product.new_product(
+        {"name": "name1", "description": "-", "price": 150.0, "quantity": 2}
+    )

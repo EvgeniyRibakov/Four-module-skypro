@@ -1,4 +1,34 @@
-class Product:
+from abc import ABC, abstractmethod
+
+
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+    @abstractmethod
+    def __add__(self):
+        pass
+
+    @abstractmethod
+    def new_product(self):
+        pass
+
+
+class MixinLog:
+    def __init__(self, *args, **kwargs):
+        print(repr(self))
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})"
+
+
+class Product(MixinLog, BaseProduct):
     __price = float
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
@@ -69,9 +99,7 @@ class Category:
 
 
 class Smartphone(Product):
-    def __init__(
-            self, name, description, price, quantity, efficiency, model, memory, color
-    ):
+    def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
         self.model = model
@@ -80,9 +108,7 @@ class Smartphone(Product):
 
 
 class LawnGrass(Product):
-    def __init__(
-            self, name, description, price, quantity, country, germination_period, color
-    ):
+    def __init__(self, name, description, price, quantity, country, germination_period, color):
         super().__init__(name, description, price, quantity)
         self.country = country
         self.germination_period = germination_period

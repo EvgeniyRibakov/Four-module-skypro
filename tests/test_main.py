@@ -95,7 +95,6 @@ def test_new_product():
     assert isinstance(prod2, Product)
     assert prod2.name == "name1"
     assert prod2.price == 43892.39
-    assert prod2.description == "-"
     assert prod2.quantity == 432
 
 

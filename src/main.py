@@ -32,6 +32,8 @@ class Product(MixinLog, BaseProduct):
     __price = float
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.name = name
         self.description = description
         self.__price = price
@@ -96,6 +98,15 @@ class Category:
         for product in self.__products:
             product_list.append(str(product))
         return product_list
+
+    def avg_price(self):
+        summ = 0
+        for product in self.__products:
+            summ += product.price
+        try:
+            return summ / len(self.__products)
+        except ZeroDivisionError:
+            return 0
 
 
 class Smartphone(Product):

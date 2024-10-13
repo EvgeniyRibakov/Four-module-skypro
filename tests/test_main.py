@@ -110,3 +110,13 @@ def test_product_addition(product_1):
     prod2 = Product.new_product(
         {"name": "name1", "description": "-", "price": 150.0, "quantity": 2}
     )
+
+
+def test_zero_quantity() -> None:
+    with pytest.raises(ValueError):
+        Product("name", "desc", 1234, 0)
+
+
+def test_empty_category() -> None:
+    cat2 = Category("category", "description", [])
+    assert cat2.avg_price() == 0
